@@ -15,8 +15,16 @@ function ShoppingForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* input para colocar el nombre del item */}
-      {/* input para colocar la categoría del producto */}
+      <input name="product-name" type="text" />
+      <select name="product-category">
+        <option value="lacteo">Lacteo</option>
+        <option value="despensa">Despensa</option>
+        <option value="higiene">Higiene</option>
+        <option value="bebida">Bebida</option>
+        <option value="limpieza">Limpieza</option>
+        <option value="otro">Otro</option>
+      </select>
+
       <button type="submit">Agregar</button>
     </form>
   );
