@@ -15,7 +15,7 @@ A continuación se presentan las actividades a realizar.
 
 ## 1. Forkear el esqueleto del proyecto
 
-Esta actividad se realizará a partir de un proyecto base que se encuentra en [este url]().
+Esta actividad se realizará a partir de un proyecto base que se encuentra en [este url](https://github.com/fedevirgolini-itr/practica_evaluacion).
 Para realizar las siguientes actividades se debe forkear este repositorio, de forma tal que cada uno pueda trabajar en su usuario y de forma independiente.
 
 El proyecto está implementado principalmente en dos componentes:
