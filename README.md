@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Práctica para evaluación de React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Realizado por: Virgolini Federico (2024) -->
 
-## Available Scripts
+En este proyecto se presentan una serie de ejercicios que servirán de práctica para fortalecer los conceptos que serán evaluados.
 
-In the project directory, you can run:
+El presente práctico plantea implementar una página web para realizar una lista de elementos para comprar en el supermercado.
+La página web está parcialmente implementada y su trabajo será finalizar esta implementación.
 
-### `npm start`
+Al finalizar el usuario será capaz de:
+- Agregar un nuevo elemento a su lista de supermercado, indicando su nombre y categoría a la que pertenece.
+- Ver listados todos los elementos que se encuentran el la lista de supermercado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A continuación se presentan las actividades a realizar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 1. Forkear el esqueleto del proyecto
 
-### `npm test`
+Esta actividad se realizará a partir de un proyecto base que se encuentra en [este url]().
+Para realizar las siguientes actividades se debe forkear este repositorio, de forma tal que cada uno pueda trabajar en su usuario y de forma independiente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El proyecto está implementado principalmente en dos componentes:
+- `App` es la componente principal del proyecto, donde se encuentra un estado denominado `items` para guardar los distintos elementos de nuestra lista. Esta componente renderiza tanto el formulario para agregar un nuevo elemento (esta parte está modularizada en la componente `ShoppingForm`) como también los items que se encuentran en la lista (todavía no implementado).
+- `ShoppingForm` es una componente hija de `App`. Esta se encarga de modularizar el formulario que se encarga de agregar un nuevo elemento a la lista de supermercado. Notar que el `onSubmit` del formulario ya está implementado.
 
-### `npm run build`
+## 2. Crear una nueva branch
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Una vez forkeado el repositorio, se deberá crear una nueva branch en la cual se realizará el desarrollo del práctico.
+Esta nueva branch tiene el objetivo de establecer un orden al desarrollo del práctico (y por supuesto ejercitar el uso de branches con git).
+No es necesario que esta nueva rama tenga un nombre en específico, pero algunas ideas para nombres pueden ser: "desarrollo_practico", "resolucion_apellido", "branch_resolucion", etc.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Implementar inputs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+En el formulario de la componente `ShoppingForm` se deben crear dos inputs (como lo indican los comentarios en el proyecto):
+- El primero de ellos será para ingresar el nombre del producto que se desea agregar a la lista.
+- El segundo input será una lista desplegable que permitirá establecer la categoría de dicho producto. Las categorías posibles son:
+    - Lacteo
+    - Despensa
+    - Higiene
+    - Bebida
+    - Limpieza  
+    - Otro
 
-### `npm run eject`
+Una vez finalizado, realizar un commit.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 4. Inicializando el estado newElement
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Determinar en qué valor debe ser inicializado el estado `newElement` de la componenete `ShoppingForm`.
+Completar el código.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Una vez finalizado, realizar un commit.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 5. Implementar función de cambio
 
-## Learn More
+Implementar una función en la componente `ShoppingForm` que modifique correctamente el estado `newElement` según lo que el usuario ingresa en el formulario.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Una vez finalizado, realizar un commit.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 6. Resetear el estado `newElement`
 
-### Code Splitting
+Notar que dentro de la función `handleSubmit()` de la componente `ShoppingForm` se debe completar la implementación mediante el vaciado del estado `newElement`.
+Esto se debe a que una vez que el usuario agrega un elemento, se debe vaciar el formulario para que el mismo quede disponible para agregar nuevos elementos.
+Completar la implemetación de la función `handleSubmit()`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Una vez finalizado, realizar un commit.
 
-### Analyzing the Bundle Size
+## 7. Implementar la lista de los elementos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Para esta altura del proyecto, ya deberíamos tener lista nuestra componente `ShoppingForm`, por lo que ahora terminaremos de implementar la componente `App`.
 
-### Making a Progressive Web App
+Implementar el listado de todos los elementos que hay en la lista.
+Se debe especificar tanto el nombre del producto como también la categoría a la que pertenece.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Ayuda: pueden comenzar por solo mostrar el nombre y luego modificar la implementación para que también se indique su categoría.
 
-### Advanced Configuration
+Una vez finalizado, realizar un commit.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 8. Modularización
 
-### Deployment
+Modularizar la lista anterior en una componente denominada `ShoppingList`.
+Esta componente recibirá a través de sus propiedades la lista completa de elementos y se encargará de renderizarlos en una lista.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Una vez finalizado, realizar un commit.
