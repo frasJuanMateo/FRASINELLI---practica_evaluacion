@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 function ShoppingForm(props) {
   const [newElement, setNewElement] = useState({
-    // modificar aquí para administrar la información del formulario
+    name: "",
+    category: ""
   });
 
   const handleSubmit = (e) => {
@@ -15,8 +16,8 @@ function ShoppingForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="product-name" type="text" />
-      <select name="product-category">
+      <input name="element-name" type="text" />
+      <select name="element-category">
         <option value="lacteo">Lacteo</option>
         <option value="despensa">Despensa</option>
         <option value="higiene">Higiene</option>
